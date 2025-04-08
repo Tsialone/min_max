@@ -17,9 +17,6 @@ class Teboka:
         
     def getAzoAleha(self):
         his_point = self.getPoint()
-        
-        
-        
         moves = {
             Point(135, 135): [Point(135, 415), Point(415, 135), Point(415, 415)],
             Point(415, 135): [Point(135, 135), Point(695, 135), Point(415, 415)],
