@@ -20,6 +20,9 @@ class Node:
         self.__list_player = copy.deepcopy(list_player)
         self.__parent = parent
 
+   
+        
+        
     def getBoxs(self):
         return self.__boxs
 
@@ -71,20 +74,21 @@ class Node:
     
 
     def toString(self):
-        # print("\n---------------")
-        # print(f"generation: {self.getGeneration()}")
-        # print(f"index_tour: {self.getIndexTour()}")
-        # print(f"placer_par 1:{self.getListPlayer()[0].getTebokaPoints()}")
-        # print(f"placer_par 2:{self.getListPlayer()[1].getTebokaPoints()}")
-        # print(f"place_dispo: {self.getPlaceDispo()}")
-        # print(f"nbr_child: {len(self.getChildren())}")
-        # print("---------------")
+        print("\n---------------")
+        print(f"generation: {self.getGeneration()}")
+        print(f"index_tour: {self.getIndexTour()}")
+        print(f"placer_par 1:{self.getListPlayer()[0].getTebokaPoints()} score: {self.getListPlayer()[0].getScore()}")
+        print(f"placer_par 2:{self.getListPlayer()[1].getTebokaPoints()} score: {self.getListPlayer()[1].getScore()}")
+        print(f"place_dispo: {self.getPlaceDispo()}")
+        print(f"nbr_child: {len(self.getChildren())}")
+        
+        print("---------------")
         with open("output.txt", "a") as file:
             file.write("\n---------------\n")
             file.write(f"generation: {self.getGeneration()}\n")
             file.write(f"index_tour: {self.getIndexTour()}\n")
-            file.write(f"placer_par 1: {self.getListPlayer()[0].getTebokaPoints()}\n")
-            file.write(f"placer_par 2: {self.getListPlayer()[1].getTebokaPoints()}\n")
+            file.write(f"placer_par 1: {self.getListPlayer()[0].getTebokaPoints()} score: {self.getListPlayer()[0].getScore()}\n")
+            file.write(f"placer_par 2: {self.getListPlayer()[1].getTebokaPoints()} score: {self.getListPlayer()[1].getScore()} \n")
             file.write(f"place_dispo: {self.getPlaceDispo()}\n")
             file.write(f"nbr_child: {len(self.getChildren())}\n")
             file.write("---------------\n")
@@ -98,15 +102,40 @@ class Node:
         for box in all_box:
             if box.getPoint() not in all_point_players:
                 all_point_dispo.append(box.getPoint())
-        return all_point_dispo
+                
+         
+        #noires       
+        result  = [pt for pt in  all_point_dispo if pt not in Data.point_noires ]
+        return result
+        # return all_point_dispo
+    
 
+    
+    def attributScore (self):
+        if ( self.__list_player[self.getIndexTour()[0]].checkWin() ):
+                self.__list_player[self.getIndexTour()[0]].setScore(1)
+                self.__list_player[self.getIndexTour()[1]].setScore(-1)
+        elif ( self.__list_player[self.getIndexTour()[1]].checkWin() ):
+            self.__list_player[self.getIndexTour()[1]].setScore(1)
+            self.__list_player[self.getIndexTour()[0]].setScore(-1)
+        else: 
+                self.__list_player[self.getIndexTour()[0]].setScore(0)
+                self.__list_player[self.getIndexTour()[1]].setScore(0)
+    
     def miteraka(self, depth):
         if (
             self.__list_player[self.getIndexTour()[0]].checkWin()
             or self.__list_player[self.getIndexTour()[1]].checkWin()
-            or depth >= 3
+            or depth == Data.profondeur
         ):
+            self.attributScore()
+            # self.getIndexTour().reverse()
+            Data.terminal_node.append(self)
             return
+        
+        if self.getParent():
+            self.getIndexTour().reverse()
+            
         all_point_dispo = self.getPlaceDispo()
         # self.__index_tour.reverse()
         for point in all_point_dispo:
@@ -118,8 +147,8 @@ class Node:
                 self.getGeneration() + 1,
             )
             temp_node_liste_player = temp_node.getListPlayer()
-            temp_node.getIndexTour().reverse()
             index_tour = temp_node.getIndexTour()[0]
+            # raise Exception(f"hahaha: {index_tour}")
             player_tour: Player = temp_node_liste_player[index_tour]
             nbr_points_player = len(player_tour.getTebokaPoints())
             if nbr_points_player < 3:
@@ -127,6 +156,7 @@ class Node:
                 player_tour.addTeboka(teboka=teboka)
                 self.addChild(temp_node)
                 temp_node.miteraka(depth + 1)
+                
             else:
                 
                 teboka_hakisako = []
@@ -146,10 +176,10 @@ class Node:
                        self.getGeneration() + 1,
                    )
                     self.addChild(temp_node_3)
-                    temp_node_3.miteraka(depth + 1)
+                    temp_node_3.miteraka(depth + 1)                    
                     teboka_findra.setPoint(teboka_initial.getPoint ())
                  
                 
-                
+        # self.toString() 
        
       

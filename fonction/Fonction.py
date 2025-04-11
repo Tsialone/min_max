@@ -1,7 +1,5 @@
 import math
 from shapely.geometry import Point
-
-
 class Fonction:
     def sont_colineaires(points: list[Point], epsilon=1e-6) -> bool:
         if len(points) < 3:
@@ -37,3 +35,22 @@ class Fonction:
     def estProche (a:Point , b:Point):
         distance  = a.distance(b)
         return distance <= 396
+    def min_max (etat  ,  profondeur , estMax):
+        from fonction.Data import Data
+        if profondeur == Data.profondeur or etat in Data.terminal_node :
+            etat.attributScore()
+            his_v = etat.getListPlayer()[Data.indexs_tour[0]].getScore()
+            return his_v
+        if estMax:
+            v =  float("-inf")
+            for child in etat.getChildren():
+                v = max(v , Fonction.min_max (child , profondeur+1 , False))
+            etat.getListPlayer()[Data.indexs_tour[0]].setScore(v)
+            return v
+        else:
+            v=float("+inf")
+            for child in etat.getChildren():
+                v = min(v , Fonction.min_max (child , profondeur+1 , True))
+            etat.getListPlayer()[Data.indexs_tour[0]].setScore(v)
+            return v
+            

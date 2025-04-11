@@ -30,6 +30,10 @@ class Mouse:
         for box in list_box:
             temp_box: Box = box
             temp_box_point = Point(temp_box.x, temp_box.y)
+            
+            #noires
+            if temp_box_point in Data.point_noires:
+                continue
 
             distance = Fonction.distance(Mouse.gauche, temp_box_point)
             if distance < eps:
@@ -40,7 +44,7 @@ class Mouse:
                     player_deplace.addTeboka(player_teboka)
                     table.drawPoint(point=temp_box_point, color=player_deplace.getColor())
                     print(f"Player: {player_deplace.getIdPlayer()} a place un point: {temp_box_point}")
-                    print(Data.indexs_tour)
+                    # print(Data.indexs_tour)
                     
                     # Data.current_node = Node(None , Data.players , Data.indexs_tour  , table.getBoxs() , generation=0)
                     # print(player_deplace.checkWin())
@@ -49,6 +53,7 @@ class Mouse:
                         messagebox.showinfo("click", f"Player: {player_deplace.getIdPlayer()} a gagner")
                         break
                     Data.indexs_tour.reverse()
+                    # print("debug"  , Data.indexs_tour)
                     break
                 else:
                     if len(player_tebokas) >= 3:
@@ -85,6 +90,11 @@ class Mouse:
         for box in list_box:
             temp_box: Box = box
             temp_box_point = Point(temp_box.x, temp_box.y)
+            
+            #noires
+            if temp_box_point in Data.point_noires:
+                continue
+            
             distance = Fonction.distance(Mouse.droite, temp_box_point)
             if distance < eps:
                 player_teboka = Teboka(temp_box_point, player_deplace.getColor())

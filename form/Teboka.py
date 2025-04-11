@@ -39,7 +39,12 @@ class Teboka:
             Point(415, 695): [Point(135, 695), Point(695, 695), Point(415, 415)],
             Point(695, 695): [Point(415, 695), Point(695, 415), Point(415, 415)],
         }
-        return moves.get(his_point, [])
+        
+        
+        #noires
+        from fonction.Data import Data
+        result  = [pt for pt in  moves.get(his_point, []) if pt not in Data.point_noires ]
+        return result
         # if  ():
             
         

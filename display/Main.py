@@ -7,34 +7,25 @@ from fonction.Data import Data
 from display.Info import Info
 from objets.Player import Player
 
-players = [
-    Player (1 , "red") , 
-    Player(2 , "blue")
-]
+players = [Player(1, "red"), Player(2, "blue")]
 
- #distance 280 <=  x  <= 396
+# distance 280 <=  x  <= 396
 
 
-
-fenetre = Fenetre("1500x880" ,"Fanorona telo")
-table  = Table(870 , 850 , fenetre , afficher=True)
-info = Info(600 , 850 , fenetre)
+fenetre = Fenetre("1500x880", "Fanorona telo")
+table = Table(870, 850, fenetre, afficher=True)
+info = Info(600, 850, fenetre)
 
 Data.fenetre = fenetre
-Data.info  =info
+Data.info = info
 Data.table = table
 Data.players = players
+Data.point_noires = [Point(415, 415)]
+
+# print(Point(135 , 135) in Data.point_noires)
+
+for point_noire in Data.point_noires:
+    Data.table.drawPoint(point_noire, "black")
 
 
-# Data.drawMarcher(carte)
-# Data.drawTextMarcher()
 fenetre.mainloop()
-
-
-
-
-    
-
-
-
-

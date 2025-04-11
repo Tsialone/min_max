@@ -4,6 +4,7 @@ from fonction.Fonction import Fonction
 class Player:
     def __init__ (self , id_player:int , color:str):
         self.__id_player = id_player
+        self.__score = None
         self.__teboka_grabed  = None
         self.__color = color
         self.__list_teboka = []
@@ -16,13 +17,19 @@ class Player:
     def getListTeboka  (self):
         return self.__list_teboka
     
-    
+        
+        
+        
     
     def getTebokaGrabed (self):
         return self.__teboka_grabed
     def setTebokaGrabed (self , teboka:Teboka):
         self.__teboka_grabed = teboka
     
+    
+    def setTeboka (self , teboka:Teboka):
+        self.__list_teboka = teboka
+        
     def getIdPlayer (self):
         return self.__id_player
     def setIdPlayer (self , id_player:int):
@@ -42,6 +49,11 @@ class Player:
         for teboka in self.__list_teboka:
             points.append(teboka.getPoint())
         return points
+
+    def getScore (self):
+        return self.__score
+    def setScore (self , score):
+        self.__score = score
     
     def checkWin (self):
         teboka_point = self.getTebokaPoints()
