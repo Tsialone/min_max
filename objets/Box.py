@@ -13,7 +13,8 @@ class Box(Rectangle):
         self.__longeur = longeur 
         self.__largeur = largeur 
        
-        
+    def getPoint (self):
+        return Point(self.x , self.y)
     def getIdBox(self):
         return self.__idBox
     def getLongueur(self):
@@ -22,7 +23,14 @@ class Box(Rectangle):
 
     def getLargeur(self):
         return self.__largeur
-    
+    def copy(self):
+        return Box(
+            x=self.x,
+            y=self.y,
+            idBox=self.__idBox,
+            longeur=self.__longeur,
+            largeur=self.__largeur
+        )
     
 
 

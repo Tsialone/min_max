@@ -3,8 +3,6 @@ from objets.Player import Player
 from form.Teboka import Teboka
 
 from fonction.Data import Data
-from fonction.Fonction import Fonction
-
 import copy
 
 
@@ -65,20 +63,16 @@ class Node:
 
     def setListPlayer(self, list):
         self.__list_player = list
-    
-    
-        
-    
 
     def toString(self):
-        # print("\n---------------")
-        # print(f"generation: {self.getGeneration()}")
-        # print(f"index_tour: {self.getIndexTour()}")
-        # print(f"placer_par 1:{self.getListPlayer()[0].getTebokaPoints()}")
-        # print(f"placer_par 2:{self.getListPlayer()[1].getTebokaPoints()}")
-        # print(f"place_dispo: {self.getPlaceDispo()}")
-        # print(f"nbr_child: {len(self.getChildren())}")
-        # print("---------------")
+        print("\n---------------")
+        print(f"generation: {self.getGeneration()}")
+        print(f"index_tour: {self.getIndexTour()}")
+        print(f"placer_par 1:{self.getListPlayer()[0].getTebokaPoints()}")
+        print(f"placer_par 2:{self.getListPlayer()[1].getTebokaPoints()}")
+        print(f"place_dispo: {self.getPlaceDispo()}")
+        print(f"nbr_child: {len(self.getChildren())}")
+        print("---------------")
         with open("output.txt", "a") as file:
             file.write("\n---------------\n")
             file.write(f"generation: {self.getGeneration()}\n")
@@ -101,12 +95,22 @@ class Node:
         return all_point_dispo
 
     def miteraka(self, depth):
+        # alaina daholo izay place mbola tss nipetraka tao @parent
+        # self.toString()
+        # print(f"{Data.nbr_gen6}")
+        # if  self.__list_player[self.getIndexTour()[0]].checkWin():
+        # Data.nbr_mandresy+=1
+        # print(Data.nbr_mandresy , end='\r')
+        # self.toString()
+        # print(f"depth: {depth}")
+
         if (
             self.__list_player[self.getIndexTour()[0]].checkWin()
             or self.__list_player[self.getIndexTour()[1]].checkWin()
-            or depth >= 3
+            or depth >= 2
         ):
             return
+
         all_point_dispo = self.getPlaceDispo()
         # self.__index_tour.reverse()
         for point in all_point_dispo:
@@ -127,29 +131,30 @@ class Node:
                 player_tour.addTeboka(teboka=teboka)
                 self.addChild(temp_node)
                 temp_node.miteraka(depth + 1)
+
             else:
-                
-                teboka_hakisako = []
                 for player_teboka in player_tour.getListTeboka():
-                    if Fonction.estProche(player_teboka.getPoint() , point) and point in player_teboka.getAzoAleha():
-                        teboka_hakisako.append(player_teboka)
-                # print(f"point: {point} ")
-                for teboka_findra in teboka_hakisako:
-                    # print(f"teboka_hakisaka: {teboka_findra.getPoint()}")
-                    teboka_initial = copy.deepcopy(teboka_findra)
-                    teboka_findra.setPoint(point) 
-                    temp_node_3 = Node(
-                       self,
-                       temp_node_liste_player,
-                       temp_node.getIndexTour(),
-                       self.getBoxs(),
-                       self.getGeneration() + 1,
-                   )
-                    self.addChild(temp_node_3)
-                    temp_node_3.miteraka(depth + 1)
-                    teboka_findra.setPoint(teboka_initial.getPoint ())
-                 
-                
-                
-       
-      
+                    temp_node = Node(
+                        self,
+                        self.__list_player,
+                        self.__index_tour,
+                        self.getBoxs(),
+                        self.getGeneration() + 1,
+                    )
+                    temp_node_liste_player = temp_node.getListPlayer()
+                    temp_node.getIndexTour().reverse()
+                    index_tour = temp_node.getIndexTour()[0]
+                    player_tour: Player = temp_node_liste_player[index_tour]
+                    point_azo_aleha = player_teboka.getAzoAleha()
+                    place_initial_teboka =  copy.deepcopy (player_teboka)
+                    print(f"Mifindra: {place_initial_teboka.getPoint()}")
+                    for point_azo in point_azo_aleha:
+                        if point_azo in temp_node.getPlaceDispo():
+                            player_teboka.setPoint(point_azo)
+                            self.addChild(temp_node)
+                            temp_node.miteraka(depth + 1)
+                            # raise Exception("Mijanona")
+                    player_teboka.setPoint (place_initial_teboka.getPoint())
+                break
+                    # print(f"Ovaina: { type (player_teboka)}")
+        # self.toString()

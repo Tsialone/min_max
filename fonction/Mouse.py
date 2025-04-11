@@ -4,6 +4,7 @@ from fonction.Fonction import Fonction
 from objets.Box import Box
 from fonction.Data import Data
 from form.Teboka import Teboka
+from form.Node import Node
 
 
 import math
@@ -38,11 +39,14 @@ class Mouse:
                 if not point_taged and len(player_tebokas) < 3:
                     player_deplace.addTeboka(player_teboka)
                     table.drawPoint(point=temp_box_point, color=player_deplace.getColor())
-                    print(f"Player: {player_deplace.getIdPLayer()} a place un point: {temp_box_point}")
-                    print(player_deplace.checkWin())
+                    print(f"Player: {player_deplace.getIdPlayer()} a place un point: {temp_box_point}")
+                    print(Data.indexs_tour)
+                    
+                    # Data.current_node = Node(None , Data.players , Data.indexs_tour  , table.getBoxs() , generation=0)
+                    # print(player_deplace.checkWin())
                     if (player_deplace.checkWin()):
                         table.drawWin(player_deplace.getTebokaPoints() , player_deplace.getColor())
-                        messagebox.showinfo("click", f"Player: {player_deplace.getIdPLayer()} a gagner")
+                        messagebox.showinfo("click", f"Player: {player_deplace.getIdPlayer()} a gagner")
                         break
                     Data.indexs_tour.reverse()
                     break
@@ -51,7 +55,7 @@ class Mouse:
                         # print(f"{(all_tebokas_point)}")
                         if (player_teboka.getPoint() in all_tebokas_point):
                             player_deplace.setTebokaGrabed(player_teboka)
-                            print(f"Player: {player_deplace.getIdPLayer()} a choisi un point a deplacer: {temp_box_point}")
+                            print(f"Player: {player_deplace.getIdPlayer()} a choisi un point a deplacer: {temp_box_point}")
                             break
                         # messagebox.showinfo("click", f"efa misy point mipetraka: {temp_box_point}")
 
@@ -99,11 +103,11 @@ class Mouse:
                     print(f"apres: { player_deplace.getTebokaPoints() }")
                     table.drawPoint(point=temp_box_point, color=player_deplace.getColor())
                     player_deplace.setTebokaGrabed(None)
-                    print(f"Player: {player_deplace.getIdPLayer()} a deplacer un point: {temp_box_point}")
+                    print(f"Player: {player_deplace.getIdPlayer()} a deplacer un point: {temp_box_point}")
                     print(player_deplace.checkWin())
                     if (player_deplace.checkWin()):
                         table.drawWin(player_deplace.getTebokaPoints() , player_deplace.getColor())
-                        messagebox.showinfo("click", f"Player: {player_deplace.getIdPLayer()} a gagner")
+                        messagebox.showinfo("click", f"Player: {player_deplace.getIdPlayer()} a gagner")
                         break
                     Data.indexs_tour.reverse()
                     print(f"{Data.indexs_tour}")

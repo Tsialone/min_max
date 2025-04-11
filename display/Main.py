@@ -12,9 +12,12 @@ players = [
     Player(2 , "blue")
 ]
 
+ #distance 280 <=  x  <= 396
+
+
 
 fenetre = Fenetre("1500x880" ,"Fanorona telo")
-table  = Table(870 , 850 , fenetre)
+table  = Table(870 , 850 , fenetre , afficher=True)
 info = Info(600 , 850 , fenetre)
 
 Data.fenetre = fenetre

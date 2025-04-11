@@ -6,17 +6,21 @@ from fonction.Mouse import Mouse
 
 
 class Table(tk.Frame):
-    def __init__(self, width: int, height: int, parent: Fn.Fenetre):
+    def __init__(self, width: int, height: int, parent: Fn.Fenetre , afficher:bool):
         super().__init__(parent, bg="lightblue", width=width, height=height)
         self.pack_propagate(False)
         self.__canvas = None
-        self.place(x=10, y=10)
+        if afficher:
+            self.place(x=10, y=10)
         self.__boxs = []
         self.__parent = parent
         self.update_idletasks()
         self.initBoxs()
         self.drawTsipika()
 
+    def getParent (self):
+        return self.__parent
+        
     def getBoxs(self):
         return self.__boxs
 

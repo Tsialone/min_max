@@ -14,7 +14,12 @@ class Teboka:
         return self.__point
     def setPoint (self , point:Point):
         self.__point =  point
-        
+    
+    def copy(self):
+        return Teboka(
+            point=Point(self.__point.x , self.__point.y),
+            couleur=self.__couleur  
+        )
     def getAzoAleha(self):
         his_point = self.getPoint()
         moves = {

@@ -10,5 +10,11 @@ class Data:
     fenetre = None
     players = None
     indexs_tour = [0 , 1]
+    current_node = None
+    
+    
+    
+    nbr_gen6 = 0
+    nbr_mandresy = 0
 
 

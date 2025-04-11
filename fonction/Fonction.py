@@ -13,7 +13,7 @@ class Fonction:
         for i in range(2, len(points)):
             xi, yi = points[i].x, points[i].y
             det = (x1 - x0)*(yi - y0) - (y1 - y0)*(xi - x0)
-            print(f"Déterminant avec P0, P1, P{i} = {det}")
+            # print(f"Déterminant avec P0, P1, P{i} = {det}")
             if abs(det) > epsilon:
                 return False
 
@@ -33,3 +33,7 @@ class Fonction:
             if distance < eps:
                 return point_temp
         return None
+    
+    def estProche (a:Point , b:Point):
+        distance  = a.distance(b)
+        return distance <= 396

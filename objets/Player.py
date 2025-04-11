@@ -23,9 +23,9 @@ class Player:
     def setTebokaGrabed (self , teboka:Teboka):
         self.__teboka_grabed = teboka
     
-    def getIdPLayer (self):
+    def getIdPlayer (self):
         return self.__id_player
-    def setIdPLayer (self , id_player:int):
+    def setIdPlayer (self , id_player:int):
         self.setIdPLayer = id_player
         
     def addTeboka (self , teboka:Teboka):
@@ -42,6 +42,7 @@ class Player:
         for teboka in self.__list_teboka:
             points.append(teboka.getPoint())
         return points
+    
     def checkWin (self):
         teboka_point = self.getTebokaPoints()
         if  len (teboka_point) ==3:

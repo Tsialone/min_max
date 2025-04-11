@@ -1,17 +1,20 @@
+from form.Node import Node
+import copy
+
 class Graphe:
-    def __init__ (self , id_graphe):
-        self.__id_graphe = id_graphe
-        self.__nodes =  []
+    origin_node:Node = None
+    
+    def drawGraph ():
+        temp = copy.deepcopy(Graphe.origin_node)
+        temp.toString()
+        while temp.getChildren():
+            for child_node in temp.getChildren():
+                child_node.toString()
         
-    def getIdGraphe (self):
-        return self.__id_graphe
-    def setIdGraphe  (self , id_graphe):
-        self.__id_graphe = id_graphe
+            
+            
         
-    def getNodes (self):
-        return self.__nodes
-    def addNode (self , node):
-        self.__nodes.append(node)
+    
     
     
     
