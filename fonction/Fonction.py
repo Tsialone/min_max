@@ -35,6 +35,7 @@ class Fonction:
     def estProche (a:Point , b:Point):
         distance  = a.distance(b)
         return distance <= 396
+    
     def min_max (etat  ,  profondeur , estMax):
         from fonction.Data import Data
         if profondeur == Data.profondeur or etat in Data.terminal_node :

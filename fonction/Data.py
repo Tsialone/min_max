@@ -15,7 +15,7 @@ class Data:
     current_node = None
     terminal_node = []
     
-    profondeur = 5
+    profondeur = 6
     point_noires = None
     nbr_gen6 = 0
     nbr_mandresy = 0

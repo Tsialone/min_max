@@ -15,7 +15,7 @@ class Node:
     def __init__(self, parent, list_player, index_tour, list_boxs, generation):
         self.__children = []
         self.__generation = generation
-        self.__index_tour = index_tour[:]
+        self.__index_tour = copy.deepcopy(index_tour)
         self.setBoxs(copy.deepcopy(list_boxs))
         self.__list_player = copy.deepcopy(list_player)
         self.__parent = parent
@@ -123,62 +123,62 @@ class Node:
                 self.__list_player[self.getIndexTour()[1]].setScore(0)
     
     def miteraka(self, depth):
-        if (
-            self.__list_player[self.getIndexTour()[0]].checkWin()
-            or self.__list_player[self.getIndexTour()[1]].checkWin()
-            or depth == Data.profondeur
-        ):
-            # self.attributScore()
-            # self.getIndexTour().reverse()
-            # Data.terminal_node.append(self)
+        index0, index1 = self.__index_tour[0], self.__index_tour[1]
+        player0 = self.__list_player[index0]
+        player1 = self.__list_player[index1]
+
+        if player0.checkWin() or player1.checkWin() or depth == Data.profondeur:
             return
-        
+
         if self.getParent():
-            self.getIndexTour().reverse()
-            
+            self.__index_tour.reverse()  # évite de recréer une liste
+
         all_point_dispo = self.getPlaceDispo()
+        print(f"place_dispo: {len(all_point_dispo)}")
+
+        player_tour = self.__list_player[self.__index_tour[0]]
+        tebokas = player_tour.getListTeboka()
+        couleur = player_tour.getColor()
+
+        has_less_than_three = len(tebokas) < 3
+
         for point in all_point_dispo:
-            temp_node = Node(
-                self,
-                self.__list_player,
-                self.__index_tour,
-                self.getBoxs(),
-                self.getGeneration() + 1,
-            )
-            temp_node_liste_player = temp_node.getListPlayer()
-            index_tour = temp_node.getIndexTour()[0]
-            # raise Exception(f"hahaha: {index_tour}")
-            player_tour: Player = temp_node_liste_player[index_tour]
-            nbr_points_player = len(player_tour.getTebokaPoints())
-            if nbr_points_player < 3:
-                teboka = Teboka(point=point, couleur=player_tour.getColor())
-                player_tour.addTeboka(teboka=teboka)
+            if has_less_than_three:
+                new_teboka = Teboka(point=point, couleur=couleur)
+                # ici, pas besoin de deep copy car le joueur a moins de 3 points
+                player_tour.addTeboka(new_teboka)
+
+                temp_node = Node(
+                    self,
+                    self.__list_player,  # pas de deepcopy ici
+                    self.__index_tour[:],  # shallow copy ok
+                    self.getBoxs(),
+                    self.getGeneration() + 1,
+                )
+
                 self.addChild(temp_node)
                 temp_node.miteraka(depth + 1)
-                
+
+                # nettoyage après appel récursif
+                player_tour.getListTeboka().pop()
             else:
-                
-                teboka_hakisako = []
-                for player_teboka in player_tour.getListTeboka():
-                    if Fonction.estProche(player_teboka.getPoint() , point) and point in player_teboka.getAzoAleha():
-                        teboka_hakisako.append(player_teboka)
-                # print(f"point: {point} ")
-                for teboka_findra in teboka_hakisako:
-                    # print(f"teboka_hakisaka: {teboka_findra.getPoint()}")
-                    teboka_initial = copy.deepcopy(teboka_findra)
-                    teboka_findra.setPoint(point) 
-                    temp_node_3 = Node(
-                       self,
-                       temp_node_liste_player,
-                       temp_node.getIndexTour(),
-                       self.getBoxs(),
-                       self.getGeneration() + 1,
-                   )
-                    self.addChild(temp_node_3)
-                    temp_node_3.miteraka(depth + 1)                    
-                    teboka_findra.setPoint(teboka_initial.getPoint ())
-                 
-                
-        # self.toString() 
+                for t in tebokas:
+                    if Fonction.estProche(t.getPoint(), point) and point in t.getAzoAleha():
+                        original = t.getPoint()
+                        t.setPoint(point)
+
+                        temp_node = Node(
+                            self,
+                            self.__list_player,  # toujours la même liste
+                            self.__index_tour[:],
+                            self.getBoxs(),
+                            self.getGeneration() + 1,
+                        )
+
+                        self.addChild(temp_node)
+                        temp_node.miteraka(depth + 1)
+
+                        # rollback
+                        t.setPoint(original)
        
       
