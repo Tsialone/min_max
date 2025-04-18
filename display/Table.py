@@ -1,7 +1,7 @@
 import tkinter as tk
 import display.Fenetre as Fn
 from objets.Box import Box
-from shapely.geometry import Point
+from form.Point import Point
 from fonction.Mouse import Mouse
 
 

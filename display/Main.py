@@ -21,7 +21,7 @@ Data.info = info
 Data.table = table
 Data.players = players
 Data.point_noires = [
-    # Point(415 , 415)
+    # Point(135 , 695)
     
 ]
 

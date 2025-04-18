@@ -1,5 +1,6 @@
 import math
-from shapely.geometry import Point
+from  form.Point import Point
+import time
 class Fonction:
     def sont_colineaires(points: list[Point], epsilon=1e-6) -> bool:
         if len(points) < 3:
@@ -36,22 +37,51 @@ class Fonction:
         distance  = a.distance(b)
         return distance <= 396
     
-    def min_max (etat  ,  profondeur , estMax):
+    def min_max (etat  ,  profondeur , estMax  , deep):
         from fonction.Data import Data
         if profondeur == Data.profondeur or etat in Data.terminal_node :
             etat.attributScore()
-            his_v = etat.getListPlayer()[Data.indexs_tour[0]].getScore()
+            # his_v = etat.getListPlayer()[Data.indexs_tour[0]].getScore()  / deep
+            sign = 1 if etat.getListPlayer()[Data.indexs_tour[0]].getScore() >= 0 else -1
+            his_v = etat.getListPlayer()[Data.indexs_tour[0]].getScore() + sign * (1 / deep)  
             return his_v
         if estMax:
             v =  float("-inf")
             for child in etat.getChildren():
-                v = max(v , Fonction.min_max (child , profondeur+1 , False))
+                child.deep = deep + 1
+                v = max(v , Fonction.min_max (child , profondeur+1 , False  ,deep+1  ))
             etat.getListPlayer()[Data.indexs_tour[0]].setScore(v)
             return v
         else:
             v=float("+inf")
             for child in etat.getChildren():
-                v = min(v , Fonction.min_max (child , profondeur+1 , True))
-            etat.getListPlayer()[Data.indexs_tour[0]].setScore(v)
-            return v
-            
+                child.deep = deep + 1
+                v = min(v , Fonction.min_max (child , profondeur+1 , True  , deep + 1))
+            etat.getListPlayer()[Data.indexs_tour[0]].setScore(v) 
+            return v 
+    def getAzoAleha (his_point:Point):
+        from fonction.Data import Data
+        result  = [pt for pt in  Data.moves.get(his_point, []) if pt not in Data.point_noires ]
+        return result
+    
+    def getMaxNode(nodes):
+        from fonction.Data import Data
+
+        # start_time = time.time()  # ⏱️ Start timer
+
+        max_node = None
+        max_score = float("-inf")
+        for node in nodes:
+            score = node.getListPlayer()[Data.indexs_tour[0]].getScore()
+            if score > max_score:
+                max_score = score
+                max_node = node
+
+        # end_time = time.time()  # ⏱️ End timer
+
+        # print(f"[TIMER] getMaxNode executed in {end_time - start_time:.6f} seconds")
+
+        return max_node
+        
+        
+        

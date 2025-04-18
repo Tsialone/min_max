@@ -16,8 +16,10 @@ class Node:
         self.__children = []
         self.__generation = generation
         self.__index_tour = index_tour[:]
-        self.setBoxs(copy.deepcopy(list_boxs))
-        self.__list_player = copy.deepcopy(list_player)
+        self.setBoxs( list_boxs)
+        self.__list_player =[p.copyKo() for p in list_player]
+        # self.__list_player = copy.deepcopy(list_player)
+        self.deep  = 0
         self.__parent = parent
 
    
@@ -62,6 +64,8 @@ class Node:
 
     def getChildren(self):
         return self.__children
+    
+    
 
     def getListPlayer(self):
         return self.__list_player
@@ -123,18 +127,20 @@ class Node:
                 self.__list_player[self.getIndexTour()[1]].setScore(0)
     
     def miteraka(self, depth):
+        
+        tour = self.getIndexTour()
         if (
-            self.__list_player[self.getIndexTour()[0]].checkWin()
-            or self.__list_player[self.getIndexTour()[1]].checkWin()
+            self.__list_player[tour[0]].checkWin()
+            or self.__list_player[tour[1]].checkWin()
             or depth == Data.profondeur
         ):
             # self.attributScore()
             # self.getIndexTour().reverse()
-            # Data.terminal_node.append(self)
+            Data.terminal_node.append(self)
             return
         
         if self.getParent():
-            self.getIndexTour().reverse()
+            tour.reverse()
             
         all_point_dispo = self.getPlaceDispo()
         for point in all_point_dispo:
@@ -160,12 +166,14 @@ class Node:
                 
                 teboka_hakisako = []
                 for player_teboka in player_tour.getListTeboka():
-                    if Fonction.estProche(player_teboka.getPoint() , point) and point in player_teboka.getAzoAleha():
+                    if Fonction.estProche(player_teboka.getPoint() , point) and point in  Fonction.getAzoAleha(player_teboka.getPoint()):
                         teboka_hakisako.append(player_teboka)
                 # print(f"point: {point} ")
                 for teboka_findra in teboka_hakisako:
                     # print(f"teboka_hakisaka: {teboka_findra.getPoint()}")
-                    teboka_initial = copy.deepcopy(teboka_findra)
+                    # teboka_initial = copy.deepcopy(teboka_findra)
+                    teboka_initial =teboka_findra.copyKo()
+                    
                     teboka_findra.setPoint(point) 
                     temp_node_3 = Node(
                        self,

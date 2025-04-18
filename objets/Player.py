@@ -1,4 +1,4 @@
-from shapely.geometry import Point
+from form.Point import Point
 from form.Teboka import Teboka
 from fonction.Fonction import Fonction
 class Player:
@@ -16,6 +16,17 @@ class Player:
         
     def getListTeboka  (self):
         return self.__list_teboka
+    
+    def copyKo(self):
+        copied_player = Player(self.__id_player, self.__color)
+        copied_player.setScore(self.__score)
+
+        if self.__teboka_grabed:
+            copied_player.setTebokaGrabed(self.__teboka_grabed.copyKo())
+
+        copied_player.__list_teboka = [teboka.copyKo() for teboka in self.__list_teboka]
+
+        return copied_player
     
         
         
@@ -45,7 +56,7 @@ class Player:
                 break
         
     def getTebokaPoints (self):
-        points = []
+        points:list[Point] = []
         for teboka in self.__list_teboka:
             points.append(teboka.getPoint())
         return points

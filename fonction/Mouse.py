@@ -1,5 +1,5 @@
 from tkinter import messagebox
-from shapely.geometry import Point
+from form.Point import Point
 from fonction.Fonction import Fonction
 from objets.Box import Box
 from fonction.Data import Data
@@ -103,8 +103,8 @@ class Mouse:
                 point_taged = table_canvas.find_withtag(id)
                 mouse_reference = Fonction.getProche(Mouse.droite, list_point_box)
                 
-                print(f"in: {mouse_reference  in player_teboka_grabed.getAzoAleha()} mouse: {mouse_reference} liste: {player_teboka_grabed.getAzoAleha()}  ")
-                if not point_taged and mouse_reference in player_teboka_grabed.getAzoAleha():
+                # print(f"in: {mouse_reference  in   player_teboka_grabed.getAzoAleha()} mouse: {mouse_reference} liste: {player_teboka_grabed.getAzoAleha()}  ")
+                if not point_taged and mouse_reference in Fonction.getAzoAleha(player_teboka_grabed.getPoint()):
                     print(temp_box_point)
                     print(f"avant: { player_deplace.getTebokaPoints() }")
                     player_deplace.removeTeboka(teboka_grabed)

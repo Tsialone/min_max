@@ -1,0 +1,522 @@
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [<form.Point.Point object at 0x7e6c794f7d10>] score: None
+placer_par 2: [<form.Point.Point object at 0x7e6c794f6060>] score: 0 
+place_dispo: [<form.Point.Point object at 0x7e6c777f7b00>, <form.Point.Point object at 0x7e6c777f7ad0>, <form.Point.Point object at 0x7e6c777f7380>, <form.Point.Point object at 0x7e6c777f7350>, <form.Point.Point object at 0x7e6c777f7860>, <form.Point.Point object at 0x7e6c777f7b30>, <form.Point.Point object at 0x7e6c777f77d0>, <form.Point.Point object at 0x7e6c777f7800>, <form.Point.Point object at 0x7e6c777f78f0>]
+nbr_child: 9
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0)] score: None
+placer_par 2: [Point(135.0, 135.0)] score: 0 
+place_dispo: [Point(415.0, 135.0), Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 7
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 135.0)] score: -inf 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: 0 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: None 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(695.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 415.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 3
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(415.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(415.0, 415.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(135.0, 135.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 415.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(415.0, 415.0)] score: 1 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(415.0, 415.0)] score: None 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(695.0, 415.0)] score: 0 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0), Point(415.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 1
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 695.0)] score: 0 
+place_dispo: [Point(415.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 695.0), Point(415.0, 415.0)] score: inf 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0)]
+nbr_child: 0
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0)] score: None
+placer_par 2: [Point(135.0, 135.0)] score: 0 
+place_dispo: [Point(415.0, 135.0), Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 7
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 135.0)] score: -inf 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: 0 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: None 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(695.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 415.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 3
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -1
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(415.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(415.0, 415.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(135.0, 135.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 415.0), Point(135.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(415.0, 415.0)] score: inf 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(415.0, 415.0)] score: None 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(695.0, 415.0)] score: 0 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0), Point(415.0, 415.0)] score: 0 
+place_dispo: [Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 1
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 695.0)] score: -1 
+place_dispo: [Point(415.0, 415.0), Point(695.0, 415.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(135.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 695.0), Point(415.0, 415.0)] score: inf 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0)]
+nbr_child: 0
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0)] score: None
+placer_par 2: [Point(135.0, 135.0)] score: 0 
+place_dispo: [Point(415.0, 135.0), Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 7
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 135.0)] score: -inf 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 415.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0)] score: -inf 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: 0 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 5
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0)] score: None 
+place_dispo: [Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 1 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(695.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(695.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(415.0, 415.0), Point(415.0, 695.0), Point(135.0, 415.0)] score: 1 
+place_dispo: [Point(135.0, 135.0), Point(135.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 2
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(695.0, 415.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 415.0), Point(135.0, 415.0)] score: inf 
+place_dispo: [Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 1
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(695.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: -inf
+placer_par 2: [Point(135.0, 135.0), Point(415.0, 415.0), Point(135.0, 415.0)] score: None 
+place_dispo: [Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(695.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(695.0, 415.0), Point(135.0, 415.0)] score: -inf 
+place_dispo: [Point(415.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0)]
+nbr_child: 4
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(695.0, 695.0), Point(415.0, 135.0), Point(695.0, 135.0)] score: None
+placer_par 2: [Point(135.0, 135.0), Point(135.0, 695.0), Point(135.0, 415.0)] score: inf 
+place_dispo: [Point(415.0, 415.0), Point(695.0, 415.0), Point(415.0, 695.0)]
+nbr_child: 0
+---------------
+
+---------------
+generation: 1
+index_tour: [0, 1]
+placer_par 1: [Point(415.0, 415.0)] score: None
+placer_par 2: [Point(135.0, 135.0)] score: 0 
+place_dispo: [Point(415.0, 135.0), Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 7
+---------------
+
+---------------
+generation: 1
+index_tour: [1, 0]
+placer_par 1: [Point(415.0, 415.0), Point(415.0, 135.0)] score: 0
+placer_par 2: [Point(135.0, 135.0)] score: None 
+place_dispo: [Point(695.0, 135.0), Point(135.0, 415.0), Point(695.0, 415.0), Point(135.0, 695.0), Point(415.0, 695.0), Point(695.0, 695.0)]
+nbr_child: 6
+---------------

@@ -1,7 +1,7 @@
 from datetime import *
 from form.Rectangle import Rectangle
 from form.Teboka import Teboka
-from shapely.geometry import Point
+from form.Point import Point
 
 
 

@@ -1,4 +1,7 @@
+import cProfile
 from datetime import date
+import io
+import pstats
 import threading
 import tkinter as tk
 from tkinter import messagebox
@@ -28,6 +31,7 @@ class Ecouteur:
     # else:
       # Data.profondeur = 6
     Ecouteur.lancer_calcul()
+    
       # for child in current_node.getChildren():
       #   score =   child.getListPlayer()[Data.indexs_tour[0]].getScore()
       #   if score == score_minmax:
@@ -63,30 +67,62 @@ class Ecouteur:
 
     try:
         current_node: Node = Node(None, Data.players, Data.indexs_tour, Data.table.getBoxs(), generation=0)
-        player_point = None
+        point_hita= None
 
         if current_node:
-            current_node.miteraka(0)
-            score_minmax = Fonction.min_max(current_node, 0, True)
+            profiler = cProfile.Profile()
+            profiler.enable()
 
-            for child in current_node.getChildren():
-                score = child.getListPlayer()[Data.indexs_tour[0]].getScore()
-                if score == score_minmax:
-                    player_point = child.getListPlayer()[Data.indexs_tour[0]].getTebokaPoints()
-                    print(f"nahita: {player_point}")
-                    print(f"score: {score_minmax}")
-                    break
+            # 🔽 Appel de ta fonction lente ici
+            current_node.miteraka(0)
+
+            profiler.disable()
+
+            # 🔽 Affichage lisible dans la console
+            s = io.StringIO()
+            sortby = "tottime"  # ou "cumulative"
+            ps = pstats.Stats(profiler, stream=s).sort_stats(sortby)
+            ps.print_stats(20)  # Affiche les 20 fonctions les plus coûteuses
+            print(s.getvalue())
+            score_minmax = Fonction.min_max(current_node, 0, True , 0)
+            max_node =  Fonction.getMaxNode (current_node.getChildren())
+            if max_node:
+              point_hita = max_node.getListPlayer()[Data.indexs_tour[0]].getTebokaPoints()
+              print(f"testttttt:  {max_node.getListPlayer()[Data.indexs_tour[0]].getScore()}")
+              for xx in point_hita:
+                  print(xx)
+              
+            # for child in current_node.getChildren():
+            #     # child.toString()
+            #     score = child.getListPlayer()[Data.indexs_tour[0]].getScore()
+              
+            #     player_point = child.getListPlayer()[Data.indexs_tour[0]].getTebokaPoints()
+                
+            #     # if score == score_minmax:
+            #     print("nahita\n")
+            #     for xx in player_point:
+            #       print(xx)
+            #     print(f"score_noeud: {score}")
+            #     print(f"node_deep: {child.deep}")
+            #     print(f"score_min_max: {score_minmax}")
+            #     # if score == score_minmax:
+            #       # point_hita = child.getListPlayer()[Data.indexs_tour[0]].getTebokaPoints()
+            #       # print(f"score_noeud: {score}")
+            #       # print(f"score_min_max: {score_minmax}")
+            #       # break 
+                  
+            #     # break
 
         def mise_a_jour_tk():
             popup.destroy()
-            if player_point:
+            if point_hita:
                 the_player = Data.players[Data.indexs_tour[0]]
                 ancient_point = the_player.getTebokaPoints()
                 for point in ancient_point:
                     Data.table.deleteOval(point)
                 from form.Teboka import Teboka
                 new_teboka = []
-                for point in player_point:
+                for point in point_hita:
                     new_teboka.append(Teboka(point, the_player.getColor()))
                 the_player.setTeboka(new_teboka)
 
@@ -97,7 +133,6 @@ class Ecouteur:
                     messagebox.showinfo("click", f"Player: {the_player.getIdPlayer()} a gagner")
                 Data.indexs_tour.reverse()
 
-            # Code à mesurer
             end = time.perf_counter()
             print(f"Temps écoulé : {end - start:.4f} secondes")
             
